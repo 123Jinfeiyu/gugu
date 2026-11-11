@@ -1,0 +1,27 @@
+# ---- Node ----
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# ---- 密钥（仓库只保留 secret.example.json）----
+secret.json
+secret.local.json
+*.key
+.env
+.env.local
+
+# ---- 运行期数据 ----
+data/events.jsonl
+data/*.log
+data/tmp/
+
+# ---- 课件生成缓存（渲染中间产物，可重建）----
+课件/**/.cache/
+课件/**/.slidep/
+*.log
+
+# ---- 编辑器 / 系统 ----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

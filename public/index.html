@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>咕咕 · 消化小导游｜《食物在身体里的旅行》AI 教学智能体</title>
+<meta name="description" content="小学科学《食物在身体里的旅行》备教学评一体化 AI 教学智能体：咕咕陪孩子走过口腔、食道、胃、小肠、大肠五站，教师端一键备课与学情分析。">
+<link rel="icon" href="assets/mascot-face.webp">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <div class="brand-mark"><img src="assets/mascot.webp" alt="咕咕"></div>
+    <div class="brand-text">
+      <b>咕咕 · 消化小导游</b>
+      <span>小学科学《食物在身体里的旅行》· 备教学评一体化智能体</span>
+    </div>
+  </div>
+
+  <nav class="nav" id="nav">
+    <button data-view="class" class="on">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M12 8v4l3 2"/></svg>
+      <span>课堂</span>
+    </button>
+    <button data-view="lab">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 3h6"/><path d="M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/><path d="M7.5 15h9"/></svg>
+      <span>实验室</span>
+    </button>
+    <button data-view="lesson">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 5h7v14H4z"/><path d="M13 5h7v14h-7z"/></svg>
+      <span>备课台</span>
+    </button>
+    <button data-view="report">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M8 15l4-6 4 3 4-7"/></svg>
+      <span>学情</span>
+    </button>
+  </nav>
+
+  <div class="api-pill" id="apiPill">
+    <i class="dot" id="apiDot"></i><span id="apiText">检测中…</span>
+  </div>
+</header>
+
+<main>
+
+  <!-- ==================== 课堂 ==================== -->
+  <section class="view on" id="view-class">
+    <div class="classroom">
+
+      <!-- 对话 -->
+      <div class="panel">
+        <div class="panel-head">
+          <h2>和咕咕聊聊</h2>
+          <span class="sub" id="chatStation">第 1 站 · 口腔</span>
+          <div class="right">
+            <span class="chip sun" id="starChip">★ 0</span>
+            <button class="icon-btn" id="ttsBtn" title="朗读咕咕的回答">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+            </button>
+            <button class="icon-btn" id="resetBtn" title="清空对话，重新开始">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="chat-scroll" id="chat"></div>
+
+        <div class="quick" id="quick"></div>
+
+        <div class="composer">
+          <div class="composer-inner">
+            <textarea id="input" rows="1" placeholder="把你的问题告诉咕咕，比如：馒头嚼久了为什么会变甜？"></textarea>
+            <button class="send" id="sendBtn" title="发送">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg>
+            </button>
+          </div>
+          <div class="composer-tip">
+            <kbd>Enter</kbd> 发送 · <kbd>Shift</kbd>+<kbd>Enter</kbd> 换行 · 咕咕只给线索，答案要你自己想出来
+          </div>
+        </div>
+      </div>
+
+      <!-- 右栏 -->
+      <div class="right-col">
+        <div class="progress-card">
+          <div class="progress-top">
+            <b>漂流进度</b>
+            <span id="progText">0 / 5 站</span>
+            <span class="stars" id="progStars">☆☆☆☆☆</span>
+          </div>
+          <div class="bar"><i id="progBar"></i></div>
+        </div>
+
+        <div class="stations" id="stations"></div>
+
+        <div class="explore" id="explore">
+          <div class="explore-top">
+            <h3 id="exName">口腔 <small>食物的粉碎车间</small></h3>
+          </div>
+          <p id="exDesc">牙齿把食物咬碎、磨细，舌头不停翻动搅拌，唾液把食物润湿、粘成团，还开始分解少量淀粉。</p>
+          <img class="explore-img" id="exImg" src="assets/st-mouth.webp" alt="">
+          <div class="row">
+            <button class="btn primary" id="quizBtn" style="flex:1;justify-content:center">
+              开始闯关 · 第 1 关
+            </button>
+            <button class="btn ghost small" id="askBtn" title="把这站的问题直接抛给咕咕">问咕咕</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 实验室 ==================== -->
+  <section class="view" id="view-lab">
+    <div class="wide lab">
+      <div class="panel">
+        <div class="panel-head">
+          <h2>消化实验室 · 食道蠕动模拟</h2>
+          <span class="sub">食物没有手推，是怎么下去的呢？</span>
+          <div class="right">
+            <span class="chip mint" id="tripChip">送达胃 0 次</span>
+            <button class="btn ghost small" id="resetLab">复位</button>
+          </div>
+        </div>
+
+        <div class="lab-stage">
+          <svg id="labSvg" viewBox="0 0 420 450" aria-label="食道蠕动推动食物的模拟示意">
+            <defs>
+              <linearGradient id="lStomach" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#ffb98f"/><stop offset="1" stop-color="#ef7c46"/>
+              </linearGradient>
+              <linearGradient id="lFood" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#ffe7bd"/><stop offset="1" stop-color="#efb057"/>
+              </linearGradient>
+              <linearGradient id="lEsoph" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#ffd3da"/><stop offset=".5" stop-color="#fff0f2"/><stop offset="1" stop-color="#ffd3da"/>
+              </linearGradient>
+              <filter id="lSoft" x="-30%" y="-30%" width="160%" height="160%">
+                <feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#a5583a" flood-opacity=".16"/>
+              </filter>
+            </defs>
+
+            <g id="labTube">
+              <!-- 口腔：张开的口，牙齿 + 舌头 -->
+              <g filter="url(#lSoft)">
+                <path d="M240 18c-32 0-56 16-56 34 0 25 26 40 56 40s56-15 56-40c0-18-24-34-56-34z" fill="#ff8f96"/>
+                <path d="M240 26c-26 0-45 11-45 26 0 19 21 29 45 29s45-10 45-29c0-15-19-26-45-26z" fill="#7d2f39"/>
+                <path d="M199 44q41-13 82 0l-4 11q-37-11-74 0z" fill="#fff"/>
+                <path d="M204 74q36 9 72 0l-3-9q-33 8-66 0z" fill="#fff" opacity=".92"/>
+                <ellipse cx="240" cy="79" rx="24" ry="11" fill="#ff7f8b"/>
+              </g>
+
+              <!-- 食道：管壁 + 环状肌肉 -->
+              <rect x="212" y="100" width="56" height="224" fill="url(#lEsoph)"/>
+              <g stroke="#f3bcc4" stroke-width="2.6" opacity=".95">
+                <line x1="214" y1="120" x2="266" y2="120"/><line x1="214" y1="142" x2="266" y2="142"/>
+                <line x1="214" y1="164" x2="266" y2="164"/><line x1="214" y1="186" x2="266" y2="186"/>
+                <line x1="214" y1="208" x2="266" y2="208"/><line x1="214" y1="230" x2="266" y2="230"/>
+                <line x1="214" y1="252" x2="266" y2="252"/><line x1="214" y1="274" x2="266" y2="274"/>
+                <line x1="214" y1="296" x2="266" y2="296"/>
+              </g>
+              <g id="labWallL"><path d="M212 100v224" stroke="#ffc6cf" stroke-width="12" stroke-linecap="round" fill="none"/></g>
+              <g id="labWallR"><path d="M268 100v224" stroke="#ffc6cf" stroke-width="12" stroke-linecap="round" fill="none"/></g>
+
+              <!-- 收缩波 -->
+              <g id="labSqueeze" transform="translate(0,0)">
+                <ellipse cx="240" cy="-30" rx="33" ry="8" fill="none" stroke="#ff9fae" stroke-width="4" opacity=".3"/>
+                <ellipse cx="240" cy="0" rx="37" ry="12" fill="none" stroke="#ff7488" stroke-width="7" opacity=".92"/>
+                <ellipse cx="240" cy="30" rx="33" ry="8" fill="none" stroke="#ff9fae" stroke-width="4" opacity=".3"/>
+              </g>
+
+              <!-- 食团 -->
+              <circle id="labFood" cx="240" cy="118" r="19" fill="url(#lFood)" stroke="#dd9a44" stroke-width="2.2"/>
+
+              <!-- 推进箭头 -->
+              <g id="labArrow" opacity="0" stroke="#ef7c46" stroke-width="3.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M318 176v44"/><path d="M309 211l9 9 9-9"/>
+              </g>
+              <text x="318" y="160" text-anchor="middle" font-size="11.5" font-weight="700" fill="#cf8b4a">管壁收缩</text>
+              <text x="318" y="240" text-anchor="middle" font-size="11.5" font-weight="700" fill="#cf8b4a">推着走</text>
+
+              <!-- 胃：J 形袋子 -->
+              <g filter="url(#lSoft)">
+                <path d="M240 320c-9 0-12 10-12 18l-24 28c-20 23-9 58 19 62 26 4 60 4 86 0 28-4 39-39 19-62l-24-28c0-8-3-18-12-18z" fill="url(#lStomach)"/>
+                <circle cx="226" cy="392" r="4.6" fill="#ffd9a8" opacity=".75"/>
+                <circle cx="248" cy="402" r="3.6" fill="#ffd9a8" opacity=".65"/>
+                <circle cx="266" cy="388" r="4.2" fill="#ffd9a8" opacity=".7"/>
+                <path d="M226 372q14 12 30 2" stroke="#fff" stroke-opacity=".7" stroke-width="4" fill="none" stroke-linecap="round"/>
+              </g>
+
+              <!-- 引线标注 -->
+              <g stroke="#e2c3a4" stroke-width="1.4" stroke-dasharray="4 4" fill="none">
+                <path d="M112 62h44"/><path d="M112 212h72"/><path d="M112 390h70"/>
+              </g>
+              <text x="106" y="58" text-anchor="end" font-size="14" font-weight="700" fill="#c96a30">口 腔</text>
+              <text x="106" y="216" text-anchor="end" font-size="14" font-weight="700" fill="#c96a30">食 道</text>
+              <text x="106" y="394" text-anchor="end" font-size="14" font-weight="700" fill="#c96a30">胃</text>
+              <text x="106" y="234" text-anchor="end" font-size="10.5" fill="#b08b6a">约 25 厘米</text>
+            </g>
+          </svg>
+
+          <div class="lab-hud">
+            <div class="hud-item"><span class="k">食团位置</span><b id="hPos">刚咽下</b></div>
+            <div class="hud-item"><span class="k">管壁状态</span><b id="hWall">舒张 · 等</b></div>
+            <div class="hud-item"><span class="k">已用时间</span><b id="hTime">0.0 秒</b></div>
+          </div>
+        </div>
+
+        <div class="lab-controls">
+          <div class="ctrl-row">
+            <label for="esoSlider">食团位置</label>
+            <input type="range" id="esoSlider" min="0" max="100" value="4">
+            <span class="val" id="esoVal">刚咽下</span>
+          </div>
+          <div class="ctrl-row">
+            <label>自动蠕动</label>
+            <button class="btn primary small" id="autoBtn">开始自动蠕动</button>
+            <div class="rate">
+              <span>频率</span>
+              <input type="range" id="rateSlider" min="3" max="9" value="5">
+              <b id="rateVal">5 次/分</b>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-col">
+        <div class="panel form-card" style="flex:1">
+          <h2>课堂任务</h2>
+          <p class="hint">三个动作，让学生自己"看"到食物怎么下去。做完一个打一个勾。</p>
+
+          <div class="task" id="task1">
+            <i>1</i>
+            <div>
+              <b>把食团一格一格推下去</b>
+              <span>盯住两件事：管壁是哪儿在变细？食物是被"挤"下去的，还是自己掉下去的？</span>
+            </div>
+          </div>
+
+          <div class="task" id="task2">
+            <i>2</i>
+            <div>
+              <b>打开自动蠕动</b>
+              <span>数一数：一次吞咽要几秒？食道是全程最快的一站吗？</span>
+            </div>
+          </div>
+
+          <div class="task" id="task3">
+            <i>3</i>
+            <div>
+              <b>把发现说给咕咕听</b>
+              <span>问它一句"如果食道不蠕动，食物还能到胃里吗？"，看它会不会直接告诉你答案。</span>
+            </div>
+          </div>
+
+          <div class="lab-note">
+            <b>教师提示</b>
+            <span>学生最容易说"食物是自己掉下去的"。请他们想一想：倒立着喝水，水为什么还能进胃？——因为推它的是管壁肌肉，不是重力。</span>
+          </div>
+
+          <button class="btn mint" id="askLab" style="width:100%;justify-content:center;margin-top:14px">
+            带着发现去问咕咕
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 备课台 ==================== -->
+  <section class="view" id="view-lesson">
+    <div class="wide">
+      <div class="panel form-card">
+        <h2>智能备课</h2>
+        <p class="hint">填写课题与学情，咕咕的"教研员模式"会生成一份能直接照着上的教学设计：目标、流程、问题链、板书、量规。</p>
+
+        <div class="field">
+          <label>课题</label>
+          <input id="fTopic" value="食物在身体里的旅行">
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label>学段</label>
+            <select id="fStage">
+              <option>小学三年级</option>
+              <option selected>小学四年级</option>
+              <option>小学五年级</option>
+              <option>小学六年级</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>学科</label>
+            <select id="fSubject">
+              <option>科学</option>
+              <option>健康教育</option>
+              <option>语文（跨学科）</option>
+              <option>美术（跨学科）</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label>课时</label>
+            <select id="fHours">
+              <option>1课时</option>
+              <option>2课时（连堂）</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>班级规模</label>
+            <input id="fSize" value="40 人">
+          </div>
+        </div>
+
+        <div class="field">
+          <label>学情描述</label>
+          <textarea id="fStudents" placeholder="例：学生对'吃进去的食物去哪了'很好奇，但说不清器官顺序；容易把胃当成吸收养分的地方。">班级 40 人，对"吃进去的食物去哪儿了"很好奇，但说不清器官的顺序，常把胃当成吸收养分的地方。</textarea>
+        </div>
+
+        <div class="field">
+          <label>额外要求（可留空）</label>
+          <textarea id="fFocus" placeholder="例：要融入语文的说明文写作；要照顾 2 名听障学生；想用 5 分钟做跨学科融合。"></textarea>
+        </div>
+
+        <button class="btn primary" id="genLesson" style="width:100%;justify-content:center;margin-top:4px">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg>
+          生成教学设计
+        </button>
+        <button class="btn ghost" id="genSheet" style="width:100%;justify-content:center;margin-top:8px">生成课后任务单</button>
+
+        <div style="margin-top:16px;padding-top:14px;border-top:1px dashed var(--line);display:flex;gap:8px">
+          <button class="btn ghost small" id="copyDoc">复制全文</button>
+          <button class="btn ghost small" id="dlDoc">下载 .md</button>
+        </div>
+      </div>
+
+      <div class="panel out-card">
+        <div class="panel-head">
+          <h2 id="docTitle">教学设计</h2>
+          <div class="right"><span class="chip" id="docBadge">AI 生成 · 可编辑</span></div>
+        </div>
+        <div class="doc md" id="lessonDoc">
+          <div class="empty">
+            <img src="assets/mascot-wave.webp" alt="">
+            <b>我准备好啦，先填左边几项</b>
+            <span>点「生成教学设计」，我会按"目标—重难点—流程—问题链—板书—量规"六段给你一份能上课的稿子。生成过程是逐字出来的，可以边看边改。</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 学情 ==================== -->
+  <section class="view" id="view-report">
+    <div class="wide report">
+      <div class="panel out-card">
+        <div class="panel-head">
+          <h2>学情分析报告</h2>
+          <span class="sub">依据本节课真实的提问与闯关记录生成</span>
+          <div class="right">
+            <button class="btn ghost small" id="refreshStats">刷新数据</button>
+            <button class="btn primary small" id="genReport">生成分析报告</button>
+          </div>
+        </div>
+        <div class="doc md" id="reportDoc">
+          <div class="empty">
+            <img src="assets/mascot.webp" alt="">
+            <b>还没有课堂数据</b>
+            <span>先去「课堂」和咕咕聊几句、闯两关，这里就会长出真实的学情。也可以直接点「生成分析报告」，用演示数据看效果。</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" style="overflow-y:auto">
+        <div class="panel-head"><h2>课堂数据</h2><div class="right"><span class="chip mint" id="dataBadge">实时</span></div></div>
+        <div class="stat-grid">
+          <div class="stat"><div class="k">提问总数</div><div class="v" id="sChats">0<small>次</small></div></div>
+          <div class="stat"><div class="k">闯关次数</div><div class="v" id="sQuiz">0<small>次</small></div></div>
+          <div class="stat"><div class="k">通关站次</div><div class="v" id="sFin">0<small>站</small></div></div>
+          <div class="stat"><div class="k">整体正确率</div><div class="v" id="sAcc">—</div></div>
+        </div>
+        <div class="acc-list" id="accList"></div>
+        <div style="padding:0 18px 20px">
+          <div style="font-size:11.5px;font-weight:700;color:var(--ink-2);margin-bottom:8px">最近的学生提问</div>
+          <div id="qList" style="font-size:12px;color:var(--muted);line-height:1.9"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- 闯关弹层 -->
+<div class="modal-mask" id="modal">
+  <div class="modal">
+    <button class="close" id="modalClose">×</button>
+    <div class="quiz-head">
+      <img src="assets/mascot.webp" alt="">
+      <div>
+        <div class="t" id="qStation">第 1 关 · 口腔</div>
+        <div class="q" id="qText">题目</div>
+      </div>
+    </div>
+    <div class="opts" id="qOpts"></div>
+    <div class="feedback" id="qFb"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>

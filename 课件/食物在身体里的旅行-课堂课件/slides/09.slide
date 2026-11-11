@@ -1,0 +1,46 @@
+<Slide style={{ width: 1280, height: 720, background: '#FFFBF6', padding: 60, fontFamily: 'Microsoft YaHei' }}>
+    <Box style={{ height: 600, flexDirection: 'column' }}>
+        <Box style={{ width: 108, height: 30, borderRadius: 15, border: '1px solid #EA580C', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+            <Text style={{ fontSize: 15, color: '#EA580C' }}>第 4 站</Text>
+        </Box>
+        <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#241C17', lineHeight: 1.25, marginTop: 16 }}>小肠：吸收的主战场</Text>
+        <Box style={{ width: 1160, height: 1, background: '#EFDCCA', marginTop: 16 }} />
+
+        <Box style={{ flexDirection: 'row', gap: 44, marginTop: 16, height: 434 }}>
+            <Box style={{ width: 656, flexDirection: 'column', justifyContent: 'center' }}>
+                <Text style={{ fontSize: 16, color: '#EA580C' }}>小肠的长度</Text>
+                <Box style={{ flexDirection: 'row', alignItems: 'flex-end', gap: 8, marginTop: 4 }}>
+                    <Text style={{ fontSize: 110, fontWeight: 'bold', color: '#EA580C', lineHeight: 1.05 }}>5–7</Text>
+                    <Text style={{ fontSize: 32, fontWeight: 'bold', color: '#9A3412', lineHeight: 1.05, marginBottom: 10 }}>米</Text>
+                </Box>
+                <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#241C17', lineHeight: 1.5, marginTop: 10 }}>人体最长的消化器官，盘在肚子里。</Text>
+
+                <Box style={{ flexDirection: 'row', gap: 10, marginTop: 22 }}>
+                    <Box style={{ width: 6, height: 6, borderRadius: 3, background: '#EA580C', marginTop: 10 }} />
+                    <Text style={{ fontSize: 17, color: '#241C17', lineHeight: 1.7 }}>不是直管，而是折成好多弯，所以装得下</Text>
+                </Box>
+                <Box style={{ flexDirection: 'row', gap: 10, marginTop: 12 }}>
+                    <Box style={{ width: 6, height: 6, borderRadius: 3, background: '#EA580C', marginTop: 10 }} />
+                    <Text style={{ fontSize: 17, color: '#241C17', lineHeight: 1.7 }}>内壁长满绒毛，展开后接触面积大得惊人</Text>
+                </Box>
+                <Box style={{ flexDirection: 'row', gap: 10, marginTop: 12 }}>
+                    <Box style={{ width: 6, height: 6, borderRadius: 3, background: '#EA580C', marginTop: 10 }} />
+                    <Text style={{ fontSize: 17, color: '#241C17', lineHeight: 1.7 }}>大部分营养在这里被吸收进血液，运往全身</Text>
+                </Box>
+
+                <Box style={{ flexDirection: 'row', marginTop: 20, paddingTop: 14, borderTop: '1px solid #EFDCCA' }}>
+                    <Text style={{ fontSize: 17, color: '#7C6A5C', lineHeight: 1.65 }}>又长、又皱、又多绒毛——<span style={{ color: '#9A3412', fontWeight: 'bold' }}>增加的是接触面积</span>，这是它吸收营养的本钱。</Text>
+                </Box>
+            </Box>
+
+            <Box style={{ width: 460, height: 434, background: '#FFF3E6', borderRadius: 16, flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                <Image src='assets/st-small.png' style={{ width: 400, height: 258 }} />
+                <Text style={{ fontSize: 15, color: '#7C6A5C', lineHeight: 1.5, marginTop: 18, width: 380, textAlign: 'center' }}>小肠盘曲在腹腔里，通过 3–5 小时慢慢把营养收走</Text>
+            </Box>
+        </Box>
+
+        <Box style={{ flexDirection: 'row', justifyContent: 'flex-end', marginTop: 12 }}>
+            <Text style={{ fontSize: 14, color: '#A89684' }}>09 / 16</Text>
+        </Box>
+    </Box>
+</Slide>

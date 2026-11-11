@@ -1,0 +1,99 @@
+<Slide style={{ width: 1280, height: 720, background: '#FFFBF6', padding: 60, fontFamily: 'Microsoft YaHei' }}>
+    <Box style={{ height: 600, flexDirection: 'column' }}>
+        <Box style={{ width: 108, height: 30, borderRadius: 15, border: '1px solid #EA580C', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+            <Text style={{ fontSize: 15, color: '#EA580C' }}>路线图</Text>
+        </Box>
+        <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#241C17', lineHeight: 1.25, marginTop: 16 }}>食物在身体里，走一条单向的路</Text>
+        <Box style={{ width: 1160, height: 1, background: '#EFDCCA', marginTop: 16 }} />
+
+        <Box style={{ flexDirection: 'row', marginTop: 18 }}>
+            <Box style={{ width: 232, flexDirection: 'column' }}>
+                <Box style={{ height: 156, flexDirection: 'column', justifyContent: 'flex-end', paddingBottom: 14, paddingLeft: 8, paddingRight: 8 }}>
+                    <Text style={{ fontSize: 24, fontWeight: 'bold', color: '#241C17', textAlign: 'center', lineHeight: 1.3 }}>口腔</Text>
+                    <Text style={{ fontSize: 16, color: '#7C6A5C', textAlign: 'center', lineHeight: 1.6, marginTop: 8 }}>牙齿咀嚼、唾液润湿，淀粉开始分解</Text>
+                    <Text style={{ fontSize: 15, color: '#EA580C', textAlign: 'center', marginTop: 8 }}>约 20 秒</Text>
+                </Box>
+                <Box style={{ height: 32, flexDirection: 'row', alignItems: 'center' }}>
+                    <Box style={{ width: 100, height: 2, background: '#EA580C' }} />
+                    <Box style={{ width: 32, height: 32, borderRadius: 16, background: '#EA580C', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+                        <Text style={{ fontSize: 15, fontWeight: 'bold', color: '#FFFFFF' }}>1</Text>
+                    </Box>
+                    <Box style={{ width: 100, height: 2, background: '#EA580C' }} />
+                </Box>
+                <Box style={{ height: 156 }} />
+            </Box>
+
+            <Box style={{ width: 232, flexDirection: 'column' }}>
+                <Box style={{ height: 156 }} />
+                <Box style={{ height: 32, flexDirection: 'row', alignItems: 'center' }}>
+                    <Box style={{ width: 100, height: 2, background: '#EA580C' }} />
+                    <Box style={{ width: 32, height: 32, borderRadius: 16, background: '#EA580C', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+                        <Text style={{ fontSize: 15, fontWeight: 'bold', color: '#FFFFFF' }}>2</Text>
+                    </Box>
+                    <Box style={{ width: 100, height: 2, background: '#EA580C' }} />
+                </Box>
+                <Box style={{ height: 156, flexDirection: 'column', paddingTop: 14, paddingLeft: 8, paddingRight: 8 }}>
+                    <Text style={{ fontSize: 24, fontWeight: 'bold', color: '#241C17', textAlign: 'center', lineHeight: 1.3 }}>食道</Text>
+                    <Text style={{ fontSize: 16, color: '#7C6A5C', textAlign: 'center', lineHeight: 1.6, marginTop: 8 }}>管壁肌肉一节一节收缩，把食团往下推</Text>
+                    <Text style={{ fontSize: 15, color: '#EA580C', textAlign: 'center', marginTop: 8 }}>约 8 秒</Text>
+                </Box>
+            </Box>
+
+            <Box style={{ width: 232, flexDirection: 'column' }}>
+                <Box style={{ height: 156, flexDirection: 'column', justifyContent: 'flex-end', paddingBottom: 14, paddingLeft: 8, paddingRight: 8 }}>
+                    <Text style={{ fontSize: 24, fontWeight: 'bold', color: '#241C17', textAlign: 'center', lineHeight: 1.3 }}>胃</Text>
+                    <Text style={{ fontSize: 16, color: '#7C6A5C', textAlign: 'center', lineHeight: 1.6, marginTop: 8 }}>胃壁不断揉挤，把食物搅成糊状的食糜</Text>
+                    <Text style={{ fontSize: 15, color: '#EA580C', textAlign: 'center', marginTop: 8 }}>2–4 小时</Text>
+                </Box>
+                <Box style={{ height: 32, flexDirection: 'row', alignItems: 'center' }}>
+                    <Box style={{ width: 100, height: 2, background: '#EA580C' }} />
+                    <Box style={{ width: 32, height: 32, borderRadius: 16, background: '#EA580C', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+                        <Text style={{ fontSize: 15, fontWeight: 'bold', color: '#FFFFFF' }}>3</Text>
+                    </Box>
+                    <Box style={{ width: 100, height: 2, background: '#EA580C' }} />
+                </Box>
+                <Box style={{ height: 156 }} />
+            </Box>
+
+            <Box style={{ width: 232, flexDirection: 'column' }}>
+                <Box style={{ height: 156 }} />
+                <Box style={{ height: 32, flexDirection: 'row', alignItems: 'center' }}>
+                    <Box style={{ width: 100, height: 2, background: '#EA580C' }} />
+                    <Box style={{ width: 32, height: 32, borderRadius: 16, background: '#EA580C', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+                        <Text style={{ fontSize: 15, fontWeight: 'bold', color: '#FFFFFF' }}>4</Text>
+                    </Box>
+                    <Box style={{ width: 100, height: 2, background: '#EA580C' }} />
+                </Box>
+                <Box style={{ height: 156, flexDirection: 'column', paddingTop: 14, paddingLeft: 8, paddingRight: 8 }}>
+                    <Text style={{ fontSize: 24, fontWeight: 'bold', color: '#241C17', textAlign: 'center', lineHeight: 1.3 }}>小肠</Text>
+                    <Text style={{ fontSize: 16, color: '#7C6A5C', textAlign: 'center', lineHeight: 1.6, marginTop: 8 }}>绒毛吸收大部分营养，剩下的继续往后送</Text>
+                    <Text style={{ fontSize: 15, color: '#EA580C', textAlign: 'center', marginTop: 8 }}>3–5 小时</Text>
+                </Box>
+            </Box>
+
+            <Box style={{ width: 232, flexDirection: 'column' }}>
+                <Box style={{ height: 156, flexDirection: 'column', justifyContent: 'flex-end', paddingBottom: 14, paddingLeft: 8, paddingRight: 8 }}>
+                    <Text style={{ fontSize: 24, fontWeight: 'bold', color: '#241C17', textAlign: 'center', lineHeight: 1.3 }}>大肠</Text>
+                    <Text style={{ fontSize: 16, color: '#7C6A5C', textAlign: 'center', lineHeight: 1.6, marginTop: 8 }}>回收水分和无机盐，把残渣变成粪便</Text>
+                    <Text style={{ fontSize: 15, color: '#EA580C', textAlign: 'center', marginTop: 8 }}>10 小时以上</Text>
+                </Box>
+                <Box style={{ height: 32, flexDirection: 'row', alignItems: 'center' }}>
+                    <Box style={{ width: 100, height: 2, background: '#EA580C' }} />
+                    <Box style={{ width: 32, height: 32, borderRadius: 16, background: '#EA580C', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+                        <Text style={{ fontSize: 15, fontWeight: 'bold', color: '#FFFFFF' }}>5</Text>
+                    </Box>
+                    <Box style={{ width: 100, height: 2, background: '#EA580C' }} />
+                </Box>
+                <Box style={{ height: 156 }} />
+            </Box>
+        </Box>
+
+        <Box style={{ flexDirection: 'row', borderTop: '1px solid #EFDCCA', paddingTop: 14, marginTop: 6 }}>
+            <Text style={{ fontSize: 18, color: '#241C17', lineHeight: 1.6 }}>五站是一条流水线：<span style={{ color: '#9A3412', fontWeight: 'bold' }}>前两站弄碎、送下去，胃负责搅，后两站吸干、回收</span>——每一站的形状，都为它的活服务。</Text>
+        </Box>
+
+        <Box style={{ flexDirection: 'row', justifyContent: 'flex-end', marginTop: 8 }}>
+            <Text style={{ fontSize: 14, color: '#A89684' }}>04 / 16</Text>
+        </Box>
+    </Box>
+</Slide>

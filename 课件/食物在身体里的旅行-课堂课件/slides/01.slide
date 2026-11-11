@@ -1,0 +1,19 @@
+<Slide style={{ width: 1280, height: 720, background: '#FFFBF6', padding: 60, position: 'relative', fontFamily: 'Microsoft YaHei' }}>
+    <Box style={{ position: 'absolute', right: -80, top: -60, width: 560, height: 560, borderRadius: 280, background: '#FFEDD5' }} />
+    <Box style={{ position: 'absolute', left: -140, bottom: -160, width: 460, height: 460, borderRadius: 230, background: '#FFF3E6' }} />
+
+    <Image src='assets/mascot.png' style={{ position: 'absolute', right: 70, top: 96, width: 360, height: 405 }} />
+
+    <Box style={{ position: 'absolute', left: 60, top: 150, width: 700, flexDirection: 'column' }}>
+        <Text style={{ fontSize: 18, color: '#9A3412', letterSpacing: 2 }}>教科版科学 · 四年级上册</Text>
+        <Text style={{ fontSize: 72, fontWeight: 'bold', color: '#241C17', lineHeight: 1.2, marginTop: 20 }}>食物在身体里的旅行</Text>
+        <Text style={{ fontSize: 26, color: '#7C6A5C', lineHeight: 1.5, marginTop: 30 }}>跟着咕咕，走一遍身体里的五站</Text>
+        <Text style={{ fontSize: 20, color: '#9A3412', lineHeight: 1.5, marginTop: 12 }}>第二单元 第 5 课 · 1 课时 40 分钟</Text>
+    </Box>
+
+    <Box style={{ position: 'absolute', left: 60, top: 616, width: 620, flexDirection: 'row', gap: 32 }}>
+        <Text style={{ fontSize: 15, color: '#7C6A5C' }}>授课教师：＿＿＿＿＿＿</Text>
+        <Text style={{ fontSize: 15, color: '#7C6A5C' }}>班级：＿＿＿＿＿＿</Text>
+        <Text style={{ fontSize: 15, color: '#7C6A5C' }}>合肥市蜀山区</Text>
+    </Box>
+</Slide>

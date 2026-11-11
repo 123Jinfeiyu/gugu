@@ -1,0 +1,55 @@
+<Slide style={{ width: 1280, height: 720, background: '#FFFBF6', padding: 60, fontFamily: 'Microsoft YaHei' }}>
+    <Box style={{ height: 600, flexDirection: 'column' }}>
+        <Box style={{ width: 108, height: 30, borderRadius: 15, border: '1px solid #EA580C', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+            <Text style={{ fontSize: 15, color: '#EA580C' }}>第 3 站</Text>
+        </Box>
+        <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#241C17', lineHeight: 1.25, marginTop: 16 }}>胃：食物的搅拌工厂</Text>
+        <Box style={{ width: 1160, height: 1, background: '#EFDCCA', marginTop: 16 }} />
+
+        <Box style={{ flexDirection: 'row', gap: 30, marginTop: 26, height: 426, alignItems: 'center' }}>
+            <Box style={{ width: 372, flexDirection: 'column', gap: 40 }}>
+                <Box style={{ flexDirection: 'column' }}>
+                    <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
+                        <Box style={{ width: 6, height: 6, borderRadius: 3, background: '#EA580C' }} />
+                        <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#241C17', lineHeight: 1.35 }}>形状</Text>
+                    </Box>
+                    <Text style={{ fontSize: 17, color: '#7C6A5C', lineHeight: 1.7, marginTop: 10 }}>一个 J 形的口袋，空的时候瘪瘪的，吃饱能撑到一两升。</Text>
+                </Box>
+                <Box style={{ flexDirection: 'column' }}>
+                    <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
+                        <Box style={{ width: 6, height: 6, borderRadius: 3, background: '#EA580C' }} />
+                        <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#241C17', lineHeight: 1.35 }}>胃液</Text>
+                    </Box>
+                    <Text style={{ fontSize: 17, color: '#7C6A5C', lineHeight: 1.7, marginTop: 10 }}>酸性很强，能杀死一部分细菌，也开始分解蛋白质。</Text>
+                </Box>
+            </Box>
+
+            <Box style={{ width: 356, height: 426, background: '#FFF3E6', borderRadius: 16, flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                <Image src='assets/st-stomach.png' style={{ width: 296, height: 276 }} />
+                <Text style={{ fontSize: 16, color: '#9A3412', fontWeight: 'bold', lineHeight: 1.5, marginTop: 12 }}>食物在这里变成"食糜"</Text>
+                <Text style={{ fontSize: 15, color: '#7C6A5C', lineHeight: 1.5, marginTop: 6 }}>糊状、半流质，像很稠的粥</Text>
+            </Box>
+
+            <Box style={{ width: 372, flexDirection: 'column', gap: 40 }}>
+                <Box style={{ flexDirection: 'column' }}>
+                    <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
+                        <Box style={{ width: 6, height: 6, borderRadius: 3, background: '#EA580C' }} />
+                        <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#241C17', lineHeight: 1.35 }}>动作</Text>
+                    </Box>
+                    <Text style={{ fontSize: 17, color: '#7C6A5C', lineHeight: 1.7, marginTop: 10 }}>胃壁一波一波地揉挤，把食物和胃液搅在一起，像洗衣机。</Text>
+                </Box>
+                <Box style={{ flexDirection: 'column' }}>
+                    <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
+                        <Box style={{ width: 6, height: 6, borderRadius: 3, background: '#EA580C' }} />
+                        <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#241C17', lineHeight: 1.35 }}>出口</Text>
+                    </Box>
+                    <Text style={{ fontSize: 17, color: '#7C6A5C', lineHeight: 1.7, marginTop: 10 }}>不一次放完，一点一点送进小肠；这一站要待 2–4 小时。</Text>
+                </Box>
+            </Box>
+        </Box>
+
+        <Box style={{ flexDirection: 'row', justifyContent: 'flex-end', marginTop: 12 }}>
+            <Text style={{ fontSize: 14, color: '#A89684' }}>08 / 16</Text>
+        </Box>
+    </Box>
+</Slide>

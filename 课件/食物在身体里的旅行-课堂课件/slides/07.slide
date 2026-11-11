@@ -1,0 +1,47 @@
+<Slide style={{ width: 1280, height: 720, background: '#FFFBF6', padding: 60, fontFamily: 'Microsoft YaHei' }}>
+    <Box style={{ height: 600, flexDirection: 'column' }}>
+        <Box style={{ width: 108, height: 30, borderRadius: 15, border: '1px solid #EA580C', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+            <Text style={{ fontSize: 15, color: '#EA580C' }}>活动二</Text>
+        </Box>
+        <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#241C17', lineHeight: 1.25, marginTop: 16 }}>把"推"看见：一条软管，一颗馒头</Text>
+        <Box style={{ width: 1160, height: 1, background: '#EFDCCA', marginTop: 16 }} />
+
+        <Box style={{ flexDirection: 'row', gap: 40, marginTop: 22, height: 430 }}>
+            <Box style={{ width: 672, flexDirection: 'column' }}>
+                <Image src='assets/shot-lab.png' style={{ width: 672, height: 420, borderRadius: 12, border: '1px solid #EFDCCA', objectFit: 'cover' }} />
+            </Box>
+
+            <Box style={{ width: 448, flexDirection: 'column', justifyContent: 'center' }}>
+                <Text style={{ fontSize: 15, color: '#EA580C' }}>材料</Text>
+                <Text style={{ fontSize: 17, color: '#241C17', lineHeight: 1.6, marginTop: 6 }}>一条软管（长袜也行）、一小块馒头、一根橡皮筋</Text>
+
+                <Box style={{ flexDirection: 'row', gap: 12, marginTop: 20 }}>
+                    <Text style={{ fontSize: 15, fontWeight: 'bold', color: '#EA580C', width: 26 }}>01</Text>
+                    <Text style={{ fontSize: 17, color: '#241C17', lineHeight: 1.6 }}>把馒头块塞进管子一头，用橡皮筋扎住另一头</Text>
+                </Box>
+                <Box style={{ flexDirection: 'row', gap: 12, marginTop: 14 }}>
+                    <Text style={{ fontSize: 15, fontWeight: 'bold', color: '#EA580C', width: 26 }}>02</Text>
+                    <Text style={{ fontSize: 17, color: '#241C17', lineHeight: 1.6 }}>从管子外面，用手一节一节往里挤</Text>
+                </Box>
+                <Box style={{ flexDirection: 'row', gap: 12, marginTop: 14 }}>
+                    <Text style={{ fontSize: 15, fontWeight: 'bold', color: '#EA580C', width: 26 }}>03</Text>
+                    <Text style={{ fontSize: 17, color: '#241C17', lineHeight: 1.6 }}>松手看看：馒头会自己回去，还是停在原处</Text>
+                </Box>
+
+                <Box style={{ flexDirection: 'row', gap: 12, marginTop: 18, paddingTop: 14, borderTop: '1px solid #EFDCCA' }}>
+                    <Text style={{ fontSize: 15, fontWeight: 'bold', color: '#1F8A6B', width: 52 }}>记录</Text>
+                    <Text style={{ fontSize: 16, color: '#241C17', lineHeight: 1.6 }}>挤一下走多远？几次能到另一头？</Text>
+                </Box>
+
+                <Box style={{ width: 448, background: '#F1FAF6', borderLeft: '3px solid #1F8A6B', padding: 16, marginTop: 20, flexDirection: 'column', gap: 8 }}>
+                    <Text style={{ fontSize: 13, color: '#1F8A6B', letterSpacing: 1 }}>咕咕说</Text>
+                    <Text style={{ fontSize: 16, color: '#241C17', lineHeight: 1.65 }}>右边那个滑块就是我。拖到底，看管壁怎么一圈一圈往下收。</Text>
+                </Box>
+            </Box>
+        </Box>
+
+        <Box style={{ flexDirection: 'row', justifyContent: 'flex-end', marginTop: 12 }}>
+            <Text style={{ fontSize: 14, color: '#A89684' }}>07 / 16</Text>
+        </Box>
+    </Box>
+</Slide>
